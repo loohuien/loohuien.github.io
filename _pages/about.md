@@ -15,11 +15,11 @@ I am extremely fortunate to be advised by Associate Professor Wang Jue, whose gu
 
 Recent News
 ======
-+ May 2026: I will be presenting "Policy Design and the Power of Algorithms: The Politics of On-Demand Food Delivery" in a workshop together with Assoc Prof. Chou Meng-Hsuan at RMIT Melbourne!
++ May 2026: I will be presenting "Policy Design and the Power of Algorithms: The Politics of On-Demand Food Delivery" in a seminar together with Assoc Prof. Chou Meng-Hsuan at RMIT Melbourne!
 + Nov 2025: Our research on "Generative artificial intelligence in higher education: Emotional tensions and ethical declaration" is published in British Journal of Education and Technology. Many thanks to Qu Yao, who guided me in this mixed-method study, which inspired my final year thesis!
 
 Contact
 ------
 Please feel free to reach out if you are interested in exchanging ideas, collaborating, or having a conversation (about anything at all). You can e-mail me, or drop me a text on my social media.
 
-Email: looh0012@e.ntu.edu.sg \ LinkedIn: < https://www.linkedin.com/in/loohuien/ > \ Bluesky:  <https://bsky.app/profile/huienheather.bsky.social > \
+Email: looh0012@e.ntu.edu.sg
