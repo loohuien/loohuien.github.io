@@ -22,6 +22,4 @@ Contact
 ------
 Please feel free to reach out if you are interested in exchanging ideas, collaborating, or having a conversation (about anything at all). You can e-mail me, or drop me a text on my social media.
 
-Email: looh0012@e.ntu.edu.sg
-LinkedIN: https://www.linkedin.com/in/loohuien/
-Bluesky: https://bsky.app/profile/huienheather.bsky.social
+Email: looh0012@e.ntu.edu.sg \ LinkedIn: < https://www.linkedin.com/in/loohuien/ > \ Bluesky:  <https://bsky.app/profile/huienheather.bsky.social > \
