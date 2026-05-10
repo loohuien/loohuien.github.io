@@ -1,4 +1,3 @@
-cat > _includes/archive-single-talk.html <<'EOF'
 <div class="archive__item">
   <h2 class="archive__item-title">{{ post.title }}</h2>
 
@@ -6,4 +5,3 @@ cat > _includes/archive-single-talk.html <<'EOF'
     {{ post.type }}{% if post.venue %}, {{ post.venue }}{% endif %}{% if post.date %}, {{ post.date | date: "%B %Y" }}{% endif %}{% if post.location %}, {{ post.location }}{% endif %}
   </p>
 </div>
-EOF
