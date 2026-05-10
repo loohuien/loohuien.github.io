@@ -7,11 +7,11 @@ redirect_from:
   - /about.html
 ---
 
-My name is Loo Hui En (pronounced as hwee-urn), a final-year Public Policy and Global Affairs undergraduate at the Nanyang Technological University (NTU). Starting in Fall 2026, I will be pursuing a PhD at the iSchool at the University of Illinois Urbana-Champaign. My research interests spans across **human–machine communication, information integrity and responsible AI**. I am driven by a desire to understand how we can harness the power of technology to foster positive change for all.
+My name is Loo Hui En (pronounced as hwee-urn), a final-year Public Policy and Global Affairs undergraduate at the Nanyang Technological University (NTU). Starting in Fall 2026, I will be pursuing PhD at the iSchool at the University of Illinois Urbana-Champaign. My research interests spans across **human–machine communication, information integrity and responsible AI**. I am driven by a desire to understand how we can harness the power of technology to foster positive change for all.
 
 I grew up in Singapore 🇸🇬 and received my early training in Chinese Media and Communication at [Ngee Ann Polytechnic](https://www.np.edu.sg/). Prior to enrolling at NTU, I worked as a journalist at [Lianhe Zaobao](https://www.zaobao.com.sg/) (2020–2021), covering local and crime news.
 
-I am extremely fortunate to be advised by **Associate Professor Wang Jue**, whose guidance has shaped my research interests in students’ behavioural responses to AI in education. I have also benefited from the mentorship of **Associate Professor Chou Meng-Hsuan**, with whom I have worked as a research assistant, and **Dr Jeremy Sng**, who has supported my first independent research project on generative AI and educational inequality.
+I am extremely fortunate to be advised by **A/P Wang Jue**, whose guidance has shaped my research interests in students’ behavioural responses to AI in education. I have also benefited from the mentorship of **A/P Chou Meng-Hsuan**, with whom I have worked as a research assistant, and **Dr Jeremy Sng**, who has supported my first independent research project on generative AI and educational inequality.
 
 Recent News
 ======
