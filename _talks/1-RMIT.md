@@ -3,7 +3,7 @@ title: "Policy Design and the Power of Algorithms: The Politics of On-Demand Foo
 collection: talks
 type: "Seminar Presentation"
 permalink: /talks/RMIT
-venue: "RMIT University Melbourne"
+venue: "RMIT University"
 date: 2026-05-06
-location: "Singapore"
+location: "Melbourne, Australia"
 ---

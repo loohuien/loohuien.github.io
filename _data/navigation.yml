@@ -11,14 +11,10 @@ main:
   - title: "Publications"
     url: /publications/
 
-#  - title: "Research"
-#    url: /Research/
 
   - title: "Talks"
     url: /talks/      
     
-  # - title: "CV"
-  #   url: /cv-json/
 
   - title: "CV"
     url: /files/CV-May26.pdf
