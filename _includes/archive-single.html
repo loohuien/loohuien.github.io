@@ -1,0 +1,14 @@
+<div class="archive__item">
+  <h2 class="archive__item-title">{{ post.title }}</h2>
+
+  {% if post.collection == 'talks' %}
+    <p>{{ post.type }}{% if post.venue %}, {{ post.venue }}{% endif %}{% if post.date %}, {{ post.date | date: "%B %Y" }}{% endif %}{% if post.location %}, {{ post.location }}{% endif %}</p>
+  {% elsif post.collection == 'publications' %}
+    <p>Published in {{ post.venue }}, {{ post.date | date: "%Y" }}</p>
+    {% if post.excerpt %}{{ post.excerpt | markdownify }}{% endif %}
+    {% if post.citation %}<p>Recommended citation: {{ post.citation }}</p>{% endif %}
+  {% else %}
+    {% if post.date %}<p>{{ post.date | date: "%B %Y" }}</p>{% endif %}
+    {% if post.excerpt %}{{ post.excerpt | markdownify }}{% endif %}
+  {% endif %}
+</div>
