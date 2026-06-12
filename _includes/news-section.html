@@ -1,0 +1,57 @@
+<style>
+  .news-section h2 {
+    margin-bottom: 0.5em;
+  }
+
+  .news-feed {
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.5em;
+    background: #fafafa;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+  }
+
+  .news-feed::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .news-feed::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+
+  .news-item {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 6px;
+    padding: 0.75em 1em;
+    margin-bottom: 0.5em;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  .news-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .news-date {
+    font-weight: 700;
+    color: #333;
+    margin-right: 0.3em;
+  }
+</style>
+
+<div class="news-section">
+  <h2>📢 News</h2>
+  <div class="news-feed">
+    {% for item in site.data.news %}
+    <div class="news-item">
+      <span class="news-date">[{{ item.date }}]</span>
+      {{ item.text }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
