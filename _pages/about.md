@@ -13,10 +13,7 @@ I grew up in Singapore 🇸🇬 and received my early training in Chinese Media 
 
 I am extremely fortunate to be advised by Associate Professor Wang Jue, whose guidance has shaped my research interests in students’ behavioural responses to AI in education. I have also benefited from the mentorship of Associate Professor Chou Meng-Hsuan, with whom I have worked as a research assistant, and Dr Jeremy Sng, who has supported my first independent research project on generative AI and educational inequality.
 
-Recent News
-======
-+ May 2026: I will be presenting "Policy Design and the Power of Algorithms: The Politics of On-Demand Food Delivery" in a seminar together with Assoc Prof. Chou Meng-Hsuan at RMIT Melbourne!
-+ Nov 2025: Our research on "Generative artificial intelligence in higher education: Emotional tensions and ethical declaration" is published in British Journal of Education and Technology. Many thanks to Qu Yao, who guided me in this mixed-method study, which inspired my final year thesis!
+{% include news-section.html %}
 
 Contact
 ------
