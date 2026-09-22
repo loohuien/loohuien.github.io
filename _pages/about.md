@@ -16,4 +16,4 @@ Contact
 ------
 Please feel free to reach out if you are interested in exchanging ideas, collaborating, or having a conversation (about anything at all). You can e-mail me, or drop me a text on my social media.
 
-Email: heloo2@illnois.edu
+Email: heloo2@illinois.edu
