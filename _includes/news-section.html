@@ -3,55 +3,132 @@
     margin-bottom: 0.5em;
   }
 
+  .news-year-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55em;
+    margin: 0 0 0.85em;
+  }
+
+  .news-year-button {
+    appearance: none;
+    border: 1px solid var(--global-border-color);
+    border-radius: 999px;
+    background: var(--global-bg-color);
+    color: var(--global-link-color);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 0.42em 1em;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+
+  .news-year-button:hover {
+    border-color: var(--global-base-color);
+    transform: translateY(-1px);
+  }
+
+  .news-year-button:focus-visible {
+    outline: 3px solid var(--global-link-color);
+    outline-offset: 3px;
+  }
+
+  .news-year-button[aria-pressed="true"] {
+    border-color: var(--global-base-color);
+    background: var(--global-base-color);
+    color: #fff;
+  }
+
   .news-feed {
     max-height: 320px;
     overflow-y: auto;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 0.5em;
-    background: #fafafa;
+    border: 1px solid var(--global-border-color);
+    border-radius: 10px;
+    padding: 0.55em;
+    background: var(--global-code-background-color);
     scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
+    scrollbar-color: var(--global-dark-border-color) transparent;
   }
 
   .news-feed::-webkit-scrollbar {
-    width: 6px;
+    width: 7px;
   }
 
   .news-feed::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
+    border-radius: 99px;
+    background: var(--global-dark-border-color);
   }
 
   .news-item {
-    background: #fff;
-    border: 1px solid #ebebeb;
-    border-radius: 6px;
-    padding: 0.75em 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.55em;
+    border: 1px solid var(--global-border-color);
+    border-radius: 8px;
+    padding: 0.8em 1em;
+    background: var(--global-bg-color);
     font-size: 0.95em;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .news-item:last-child {
     margin-bottom: 0;
   }
 
+  .news-item[hidden] {
+    display: none;
+  }
+
   .news-date {
-    font-weight: 700;
-    color: #333;
     margin-right: 0.3em;
+    color: var(--global-link-color);
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .news-year-button {
+      transition: none;
+    }
   }
 </style>
 
 <div class="news-section">
   <h2>📢 News</h2>
-  <div class="news-feed">
+  <div class="news-year-filter" role="group" aria-label="Filter news by year">
+    <button class="news-year-button" type="button" data-news-year="2026" aria-pressed="true">2026</button>
+    <button class="news-year-button" type="button" data-news-year="2025" aria-pressed="false">2025</button>
+  </div>
+  <div class="news-feed" id="news-feed" aria-live="polite">
     {% for item in site.data.news %}
-    <div class="news-item">
-      <span class="news-date">[{{ item.date }}]</span>
-      {{ item.text }}
-    </div>
+      {% assign news_year = item.date | split: ' ' | last %}
+      <div class="news-item" data-year="{{ news_year }}">
+        <span class="news-date">[{{ item.date }}]</span>
+        {{ item.text }}
+      </div>
     {% endfor %}
   </div>
 </div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.news-year-button');
+    var items = document.querySelectorAll('.news-item[data-year]');
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var selectedYear = button.getAttribute('data-news-year');
+
+        buttons.forEach(function (yearButton) {
+          yearButton.setAttribute('aria-pressed', yearButton === button ? 'true' : 'false');
+        });
+
+        items.forEach(function (item) {
+          item.hidden = item.getAttribute('data-year') !== selectedYear;
+        });
+      });
+    });
+
+    var currentYearButton = document.querySelector('.news-year-button[aria-pressed="true"]');
+    if (currentYearButton) currentYearButton.click();
+  }());
+</script>
