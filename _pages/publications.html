@@ -1,36 +1,81 @@
 ---
 layout: archive
-title: "Publications"
+title: "Publications & Talks"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+<style>
+  .research-intro { margin: 0 0 1.25rem; color: var(--global-text-color-light); }
+  .research-jump-nav { display: flex; flex-wrap: wrap; gap: .55rem; margin: 1.25rem 0 2.25rem; }
+  .research-jump-nav a { display: inline-flex; align-items: center; gap: .4rem; padding: .32rem .72rem; border: 1px solid var(--global-border-color); border-radius: 999px; text-decoration: none; }
+  .research-jump-nav a:hover { border-color: var(--global-link-color); color: var(--global-link-color-hover); }
+  .research-jump-nav__count { color: var(--global-text-color-light); font-size: .85em; }
+  .research-section { margin: 2.5rem 0; scroll-margin-top: 5rem; }
+  .research-section__heading { margin: 0 0 .35rem; padding-bottom: .55rem; border-bottom: 1px solid var(--global-border-color); font-size: 1.45rem; }
+  .research-section__hint { margin: 0 0 .4rem; color: var(--global-text-color-light); font-size: .92rem; }
+  .research-entry { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 1rem; padding: 1.15rem 0; border-bottom: 1px solid var(--global-border-color); }
+  .research-entry__year { padding-top: .12rem; color: var(--global-text-color-light); font-size: .9rem; font-weight: 700; }
+  .research-entry__title { margin: 0 0 .32rem; font-size: 1.08rem; line-height: 1.4; }
+  .research-entry__authors { margin: 0 0 .3rem; }
+  .research-entry__meta { margin: .2rem 0; color: var(--global-text-color-light); font-size: .92rem; }
+  .research-entry__abstract { margin: .55rem 0 .75rem; font-size: .95rem; }
+  .research-entry__abstract p { margin: 0; }
+  .research-entry__links { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
+  .research-entry__link { display: inline-block; padding: .18rem .58rem; border: 1px solid var(--global-link-color); border-radius: 4px; color: var(--global-link-color); font-size: .86rem; font-weight: 600; text-decoration: none !important; }
+  .research-entry__link:hover, .research-entry__link:focus-visible { background: var(--global-link-color); color: var(--global-bg-color) !important; }
+  @media (max-width: 600px) {
+    .research-entry { grid-template-columns: 1fr; gap: .22rem; padding: 1rem 0; }
+    .research-entry__year { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+  }
+</style>
+
+<div class="research-page">
+  <p class="research-intro">A selection of my research publications and talks.{% if site.author.googlescholar %} More publications are listed on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>.{% endif %}</p>
+
+  <nav class="research-jump-nav" aria-label="Jump to a section">
+    <a href="#publications">Publications <span class="research-jump-nav__count">{{ site.publications.size }}</span></a>
+    <a href="#talks">Talks <span class="research-jump-nav__count">{{ site.talks.size }}</span></a>
+  </nav>
+
+  <section class="research-section" id="publications" aria-labelledby="publications-heading">
+    <h2 class="research-section__heading" id="publications-heading">Publications</h2>
+    {% assign sorted_publications = site.publications | sort: "date" | reverse %}
+    {% for post in sorted_publications %}
+      <article class="research-entry">
+        <div class="research-entry__year"><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y" }}</time></div>
+        <div class="research-entry__body">
+          <h3 class="research-entry__title">{{ post.title | escape }}</h3>
+          {% if post.authors %}<p class="research-entry__authors">{{ post.authors | escape }}</p>{% endif %}
+          {% if post.venue %}<p class="research-entry__meta">{{ post.venue | escape }}</p>{% endif %}
+          {% if post.excerpt %}<div class="research-entry__abstract">{{ post.excerpt | markdownify }}</div>{% endif %}
+          {% if post.paperurl or post.slidesurl or post.codeurl or post.projecturl %}
+            <div class="research-entry__links" aria-label="Publication links">
+              {% if post.paperurl %}<a class="research-entry__link" href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
+              {% if post.slidesurl %}<a class="research-entry__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
+              {% if post.codeurl %}<a class="research-entry__link" href="{{ post.codeurl }}" target="_blank" rel="noopener noreferrer">Code</a>{% endif %}
+              {% if post.projecturl %}<a class="research-entry__link" href="{{ post.projecturl }}" target="_blank" rel="noopener noreferrer">Project</a>{% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  </section>
 
-
-
+  <section class="research-section" id="talks" aria-labelledby="talks-heading">
+    <h2 class="research-section__heading" id="talks-heading">Talks & Presentations</h2>
+    {% assign sorted_talks = site.talks | sort: "date" | reverse %}
+    {% for post in sorted_talks %}
+      <article class="research-entry">
+        <div class="research-entry__year"><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y" }}</time></div>
+        <div class="research-entry__body">
+          <h3 class="research-entry__title">{{ post.title | escape }}</h3>
+          {% if post.type or post.venue %}<p class="research-entry__meta">{% if post.type %}{{ post.type | escape }}{% endif %}{% if post.type and post.venue %} · {% endif %}{% if post.venue %}{{ post.venue | escape }}{% endif %}</p>{% endif %}
+          {% if post.date or post.location %}<p class="research-entry__meta">{% if post.date %}{{ post.date | date: "%B %d, %Y" }}{% endif %}{% if post.date and post.location %} · {% endif %}{% if post.location %}{{ post.location | escape }}{% endif %}</p>{% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</div>
