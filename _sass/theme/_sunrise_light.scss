@@ -1,40 +1,40 @@
 /* ==========================================================================
-   SUNRISE THEME - LIGHT VERSION
+   JADE PEBBLE THEME - LIGHT VERSION
    ========================================================================== */
 /* Color codes used for the theme */
-$primary-color              : #fc3a52;
-$dark-primary-color         : mix(#000, $primary-color, 40%);
-$darker-primary-color       : mix(#000, $primary-color, 60%);
-$light-primary-color        : mix(#fff, $primary-color, 50%);
-$lighter-primary-color      : mix(#fff, $primary-color, 90%);
-$background                 : #e8d5b7;
-$background-light           : mix(#fff, $background, 20%);
-$background-lighter        : #ffffff;
-$text                      : #000000;
-$text-muted                : #0e2431;
-$link                      : mix(#000, $primary-color, 10%);
-$link-dark                 : mix(#000, $link, 25%);
-$link-light                : mix(#fff, $link, 25%);
-$footer                    : #f9b248;
-$border                    : mix(#000, $background, 20%);
-$border-dark               : mix(#000, $background, 30%);
+$primary-color              : #526d45;
+$dark-primary-color         : #354832;
+$darker-primary-color       : #263427;
+$light-primary-color        : #bac8b1;
+$lighter-primary-color      : #e4e9df;
+$background                 : #e6e6e6;
+$background-light           : #f0f1ed;
+$background-lighter         : #fbfcf9;
+$text                       : #253127;
+$text-muted                 : #46574c;
+$link                       : #405e54;
+$link-dark                  : #304b42;
+$link-light                 : #355249;
+$footer                     : #bac8b1;
+$border                     : #c5ccc2;
+$border-dark                : #aeb9aa;
 
 /* Color codes used for the site */
-$danger-color               : #cc6666;
-$info-color                 : #81a2be;
-$notice-color               : #de935f;
-$success-color              : #b5bd68;
-$warning-color              : #f0c674;
+$danger-color               : #984646;
+$info-color                 : #42645f;
+$notice-color               : #765b2d;
+$success-color              : #526d45;
+$warning-color              : #765b2d;
 
 /* Other basic settings for the template */
 $border-radius              : 4px;
 $box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
 $global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
-$navicon-width              : 28px;
-$navicon-height             : 4px;
-$sidebar-link-max-width     : 250px;
-$sidebar-screen-min-width   : 1024px;
+$masthead-height             : 70px;
+$navicon-width               : 28px;
+$navicon-height              : 4px;
+$sidebar-link-max-width      : 250px;
+$sidebar-screen-min-width    : 1024px;
 
 /* Light theme for the site */
 :root {
@@ -60,4 +60,3 @@ $sidebar-screen-min-width   : 1024px;
 .page__footer-follow .social-icons .svg-inline--fa {
     color: inherit;
 }
-
