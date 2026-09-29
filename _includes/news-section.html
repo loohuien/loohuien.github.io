@@ -67,6 +67,7 @@
     border-radius: 8px;
     padding: 0.8em 1em;
     background: var(--global-bg-color);
+    color: var(--global-text-color);
     font-size: 0.95em;
     line-height: 1.55;
   }
@@ -117,11 +118,9 @@
     buttons.forEach(function (button) {
       button.addEventListener('click', function () {
         var selectedYear = button.getAttribute('data-news-year');
-
         buttons.forEach(function (yearButton) {
           yearButton.setAttribute('aria-pressed', yearButton === button ? 'true' : 'false');
         });
-
         items.forEach(function (item) {
           item.hidden = item.getAttribute('data-year') !== selectedYear;
         });
