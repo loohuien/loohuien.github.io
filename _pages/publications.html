@@ -32,18 +32,21 @@ author_profile: true
   }
 </style>
 
+{% assign paper_publications = site.publications | where_exp: "item", "item.category != 'workshops'" | sort: "date" | reverse %}
+{% assign workshop_publications = site.publications | where: "category", "workshops" | sort: "date" | reverse %}
+
 <div class="research-page">
   <p class="research-intro">A selection of my research publications and talks.{% if site.author.googlescholar %} More publications are listed on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>.{% endif %}</p>
 
   <nav class="research-jump-nav" aria-label="Jump to a section">
-    <a href="#publications">Publications <span class="research-jump-nav__count">{{ site.publications.size }}</span></a>
+    <a href="#publications">Publications <span class="research-jump-nav__count">{{ paper_publications.size }}</span></a>
+    {% if workshop_publications.size > 0 %}<a href="#workshops">Workshops <span class="research-jump-nav__count">{{ workshop_publications.size }}</span></a>{% endif %}
     <a href="#talks">Talks <span class="research-jump-nav__count">{{ site.talks.size }}</span></a>
   </nav>
 
   <section class="research-section" id="publications" aria-labelledby="publications-heading">
     <h2 class="research-section__heading" id="publications-heading">Publications</h2>
-    {% assign sorted_publications = site.publications | sort: "date" | reverse %}
-    {% for post in sorted_publications %}
+    {% for post in paper_publications %}
       <article class="research-entry">
         <div class="research-entry__year"><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y" }}</time></div>
         <div class="research-entry__body">
@@ -63,6 +66,30 @@ author_profile: true
       </article>
     {% endfor %}
   </section>
+
+  {% if workshop_publications.size > 0 %}
+  <section class="research-section" id="workshops" aria-labelledby="workshops-heading">
+    <h2 class="research-section__heading" id="workshops-heading">Workshops</h2>
+    {% for post in workshop_publications %}
+      <article class="research-entry">
+        <div class="research-entry__year"><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y" }}</time></div>
+        <div class="research-entry__body">
+          <h3 class="research-entry__title">{{ post.title | escape }}</h3>
+          {% if post.authors %}<p class="research-entry__authors">{{ post.authors | escape }}</p>{% endif %}
+          {% if post.role or post.venue %}<p class="research-entry__meta">{% if post.role %}{{ post.role | escape }}{% endif %}{% if post.role and post.venue %} · {% endif %}{% if post.venue %}{{ post.venue | escape }}{% endif %}</p>{% endif %}
+          {% if post.date or post.location %}<p class="research-entry__meta">{% if post.date %}{{ post.date | date: "%B %d, %Y" }}{% endif %}{% if post.date and post.location %} · {% endif %}{% if post.location %}{{ post.location | escape }}{% endif %}</p>{% endif %}
+          {% if post.paperurl or post.slidesurl or post.projecturl %}
+            <div class="research-entry__links" aria-label="Workshop links">
+              {% if post.paperurl %}<a class="research-entry__link" href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
+              {% if post.slidesurl %}<a class="research-entry__link" href="{{ post.slidesurl }}" target="_blank" rel="noopener noreferrer">Slides</a>{% endif %}
+              {% if post.projecturl %}<a class="research-entry__link" href="{{ post.projecturl }}" target="_blank" rel="noopener noreferrer">Workshop page</a>{% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+  {% endif %}
 
   <section class="research-section" id="talks" aria-labelledby="talks-heading">
     <h2 class="research-section__heading" id="talks-heading">Talks & Presentations</h2>

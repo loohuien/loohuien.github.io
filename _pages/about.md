@@ -10,6 +10,8 @@ My name is Loo Hui En (pronounced as Hwee-Urn), and I’m a 1st year PhD student
 
 I grew up in Singapore 🇸🇬 and received training in media and communications at [Ngee Ann Polytechnic](https://www.np.edu.sg/), after which I worked as a journalist at [Lianhe Zaobao](https://www.zaobao.com.sg/) covering local crime news. I was incredibly fortunate to be part of [SWEET lab](https://www.renwenzhang.com/sweet-lab) during my time at [Nanyang Technological University](https://www.ntu.edu.sg/) where I receive my bachelor's degree in Public Policy and Global Affairs. 
 
+When I'm not doing research, you'll probably find me deep in some horror content 👻🔪 (the creepier the better) or curled up with a philosophy book 📚🤔. Turns out both are excellent at making you question reality.
+
 {% include news-section.html %}
 
 Contact
